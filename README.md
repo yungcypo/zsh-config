@@ -32,5 +32,5 @@ My configuration for [ZSH](https://en.wikipedia.org/wiki/Z_shell)
         - You can just pull from repository and the configuration will be updated automatically
 6. Restart your console application to apply chages
 
-> Note: It you are using `p10k` version, you need to configure it with command `p10k configure`
+> Note: It you are using `p10k` version, you need to configure it with command `p10k configure`  
 > Note: Files starting with `.`, such as `.zshrc` are hidden in Linux. You can see them with command `ls -a` (or `ll -a` with this configuration)
