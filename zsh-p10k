@@ -60,3 +60,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# fzf setup
+# use ctrl+t to open fzf mid-command 
+eval "$(fzf --zsh)"
