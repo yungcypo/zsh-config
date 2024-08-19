@@ -1,40 +1,92 @@
 # ZSH configuration
 My configuration for [ZSH](https://en.wikipedia.org/wiki/Z_shell)  
 
+This configuration is mainly for Linux  
+Most of this will work the same on Mac, but I'm not sure about Windows  
+
 ## Features
-- Custom shell with `p10k` or `ohmyposh`
+- Custom shell with `p10k`, `ohmyposh` or `starship` prompt
 - Syntax Highlighting
 - Autosuggestion
 - Better history configuration
 - Better key shortcuts
 - Case insensivity
-- `ll` command - alias to `ls -l --color`
+- `ll` command - alias to `ls -l --color` with `YYYY-MM-DD` time format
 - fzf
 
+## Requirements
+To install any of these packages, you need to run command `sudo apt install <package-name>` or `sudo pacman -S <package-name>` (depending on your operating system and package manager)  
+> Note: Make sure to replace `<package-name>` with the actual name of the package  
+
+Required packages  
+- `zsh`
+- `git`
+- `wget` or `curl`
+- `unzip`
+- `fzf`
+
+You need to have installed Nerd font and set as default for your terminal application  
+
+Optional, but recommended - Custom prompt  
+- Prompt doesn't change the way how the terminal works, only how it looks  
+- You can definitely use the default prompt, but I always use one of custom prompts (`p10k`, `ohmyposh` or `starship`) 
+- To install one of these, see [Prompt section](#Prompt%20installation)
+
 ## Installation
-1. Make sure you have ZSH installed 
-    - `sudo apt install zsh` or `pacman -S zsh` or whatever suits your operating system
-2. Set ZSH as your default shell
+1. Make sure you have all the [requirements](#Requirements)  
+2. Set ZSH as your default shell  
     - `chsh <username>`
     - Enter your password
     - Enter the locatioin of ZSH (usually `/bin/zsh`)
-3. Clone this repository
-    - `git clone https://github.com/yungcypo/zsh-config.git`
-4. Backup already existing configuration *(optional)*
-    - If you already have any configuration, you can make a backup so you don't lose it  
-    - `mv ~/.zshrc ~/.zshrc.bak`  
-5. Choose one file from this repository and use it as current ZSH configuration
-    - You can see two files in this repository - `zshrc-p10k` and `zshrc-ohmyposh`
-    - You can choose which one you want and use it with following command
-        - `cp ./zshrc-ohmyposh ~/.zshrc` *(or `cp ./zshrc-p10k ~/.zshrc` respectively)*
-    - You can make a link instead of copying the file
-        - `ln ./zshrc-ohmyposh ~/.zshrc` *(or `ln ./zshrc-p10k ~/.zshrc` respectively)*
-        - This has advantage of possible future updates
-        - You can just pull from repository and the configuration will be updated automatically
-6. Restart your console application to apply chages
+3. Clone this repository  
+    - `git clone https://github.com/yungcypo/zsh-config.git ~/.zsh-config`
+4. Move to cloned repository
+    - `cd ~/.zsh-config/`
+5. Change permissions to run `use.sh`  
+    - `chmod u+x use.sh`
+6. Run `use.sh`
+    - Use this command to run it: `./use.sh`
+    - Follow instructions
+    - You will be asked, which prompt you want to use (`p10k`, `ohmyposh` or `starship`)  
+    - Simply enter the number and let the script do it's job  
+    - This will take longer, if you are running it for the first time  
+    - If you already have any configuration for `zsh`, it will be placed in `backups` folder *(`~/.zsh-config/backups/`)*
+7. Restart your terminal to apply chages
 
-> Note: It you are using `p10k` version, you need to configure it with command `p10k configure`  
-> Note: Files starting with `.`, such as `.zshrc` are hidden in Linux. You can see them with command `ls -a` (or `ll -a` with this configuration)
+> Note: Files and folders starting with `.`, such as `.zshrc` or `.zsh-config/` are hidden in Linux. You can see them with command `ls -a` (or `ll -a` with this configuration)
+
+### Prompt installation
+Before using one of custom prompts, you need to install it  
+The installation process varies from prompt to prompt  
+
+#### `p10k`
+This one installs automatically  
+If you want to change the theme, run this command: `p10k reconfigure`
+
+#### `ohmyposh`
+Run this command: `curl -s https://ohmyposh.dev/install.sh | bash -s`  
+
+If you want to change the theme, you have to edit `~/.zshrc` file  
+Look for line that says `eval "$(oh-my-posh init zsh)"` and replace it with following:  
+`eval "$(oh-my-posh init zsh --config /path/to/theme/name.omp.json)"`
+- Make sure to replace `/path/to/theme/name.omp.json` with actual path to theme  
+- You can view themes on [ohmyposh website](https://ohmyposh.dev/docs/themes)  
+- I put some themes here, in `ohmyposh-themes` folder
+    - You can easily use them: `eval "$(oh-my-posh init zsh --config ~/.zsh-config/ohmyposh-themes/stelbent-compact.minimal.omp.json)"` for example  
+
+If you are lost, follow instructions on [ohmyposh website](https://ohmyposh.dev/docs/installation/customize)
+
+#### `starship`
+`curl -sS https://starship.rs/install.sh | sh`  
+If you are using `pacman` as your package manager, you can use this command instead: `sudo pacman -S starship`
+
+If you want to change the theme, you have to edit `~/.zshrc` file  
+Choose one of [presets](https://starship.rs/presets/#nerd-font-symbols) and add corresponding line somewhere in `.zshrc` file
+- For example `starship preset gruvbox-rainbow -o ~/.config/starship.toml`
+- Preferably add this line right bellow `eval "$(starship init zsh)"`  
+
+If you are lost, follow instructions on [Starship website](https://starship.rs/)
+
 
 ### fzf
 You can use `fzf` to work in console easier  
