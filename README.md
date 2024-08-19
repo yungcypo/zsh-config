@@ -11,7 +11,7 @@ Most of this will work the same on Mac, but I'm not sure about Windows
 - Better history configuration
 - Better key shortcuts
 - Case insensivity
-- `ll` command - alias to `ls -l --color` with `YYYY-MM-DD` time format
+- `ll` command - alias to `ls -lv --color` with `YYYY-MM-DD` time format
 - fzf
 
 ## Requirements
@@ -54,6 +54,13 @@ Optional, but recommended - Custom prompt
 7. Restart your terminal to apply chages
 
 > Note: Files and folders starting with `.`, such as `.zshrc` or `.zsh-config/` are hidden in Linux. You can see them with command `ls -a` (or `ll -a` with this configuration)
+
+## Possible future updates
+There might be some improvements in this configuration  
+Simply follow these commands  
+- `git remote update`
+- `git pull`
+- `./use.sh`
 
 ### Prompt installation
 Before using one of custom prompts, you need to install it  
