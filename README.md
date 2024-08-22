@@ -4,7 +4,7 @@ My configuration for [ZSH](https://en.wikipedia.org/wiki/Z_shell)
 This configuration is mainly for Linux  
 Most of this will work the same on Mac, but I'm not sure about Windows  
 
-## Features
+# Features
 - Custom shell with `p10k`, `ohmyposh` or `starship` prompt
 - Syntax Highlighting
 - Autosuggestion
@@ -14,7 +14,7 @@ Most of this will work the same on Mac, but I'm not sure about Windows
 - `ll` command - alias to `ls -lv --color` with `YYYY-MM-DD` time format
 - fzf
 
-## Requirements
+# Requirements
 To install any of these packages, you need to run command `sudo apt install <package-name>` or `sudo pacman -S <package-name>` (depending on your operating system and package manager)  
 > Note: Make sure to replace `<package-name>` with the actual name of the package  
 
@@ -32,7 +32,7 @@ Optional, but recommended - Custom prompt
 - You can definitely use the default prompt, but I always use one of custom prompts (`p10k`, `ohmyposh` or `starship`) 
 - To install one of these, see [Prompt section](#Prompt%20installation)
 
-## Installation
+# Installation
 1. Make sure you have all the [requirements](#Requirements)  
 2. Set ZSH as your default shell  
     - `chsh <username>`
@@ -55,22 +55,16 @@ Optional, but recommended - Custom prompt
 
 > Note: Files and folders starting with `.`, such as `.zshrc` or `.zsh-config/` are hidden in Linux. You can see them with command `ls -a` (or `ll -a` with this configuration)
 
-## Possible future updates
-There might be some improvements in this configuration  
-Simply follow these commands  
-- `git remote update`
-- `git pull`
-- `./use.sh`
 
-### Prompt installation
+## Prompt installation
 Before using one of custom prompts, you need to install it  
 The installation process varies from prompt to prompt  
 
-#### `p10k`
+### `p10k`
 This one installs automatically  
 If you want to change the theme, run this command: `p10k reconfigure`
 
-#### `ohmyposh`
+### `ohmyposh`
 Run this command: `curl -s https://ohmyposh.dev/install.sh | bash -s`  
 
 If you want to change the theme, you have to edit `~/.zshrc` file  
@@ -83,7 +77,7 @@ Look for line that says `eval "$(oh-my-posh init zsh)"` and replace it with foll
 
 If you are lost, follow instructions on [ohmyposh website](https://ohmyposh.dev/docs/installation/customize)
 
-#### `starship`
+### `starship`
 `curl -sS https://starship.rs/install.sh | sh`  
 If you are using `pacman` as your package manager, you can use this command instead: `sudo pacman -S starship`
 
@@ -95,7 +89,7 @@ Choose one of [presets](https://starship.rs/presets/#nerd-font-symbols) and add 
 If you are lost, follow instructions on [Starship website](https://starship.rs/)
 
 
-### fzf
+## fzf
 You can use `fzf` to work in console easier  
 `fzf` allows you to find files mid-command for example  
 
@@ -113,3 +107,11 @@ When you are in `fzf`, you can press `<tab>` to select more options, or `<shift 
 You can also work with enviroments variables (`unset **<tab>`, `export **<tab>`) and aliases (`unalias **<tab>`)
 
 You can hit `<ctrl + r>` to look through history  
+
+# Possible future updates
+There might be some improvements in this configuration  
+Simply follow these commands  
+- `git remote update`
+- `git pull`
+- `./use.sh`
+
