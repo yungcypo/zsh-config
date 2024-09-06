@@ -12,6 +12,7 @@ Most of this will work the same on Mac, but I'm not sure about Windows
 - Better key shortcuts
 - Case insensivity
 - `ll` command - alias to `ls -lv --color` with `YYYY-MM-DD` time format
+    - You can use `lla` instead of `ll -a`
 - fzf
 
 # Requirements

@@ -28,8 +28,9 @@ function make_file {
         mkdir -p backups
         nocb=$(ls -a backups | wc -l)  # number of current backups
         mv ~/.zshrc ./backups/.zshrc.bak"$((nocb - 1))"
-        mv .zshrc ~/.zshrc
     fi
+    
+    mv .zshrc ~/.zshrc
 
     echo "Finished!"
     echo "Restart your terminal to see changes"
